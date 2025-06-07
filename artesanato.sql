@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS artesanato;
+USE artesanato;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS produtos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  descricao TEXT,
+  preco DECIMAL(10, 2) NOT NULL,
+  estoque INT NOT NULL
+);
+
+INSERT INTO usuarios (username, password)
+VALUES ('admin', '$2b$10$Fx8SeVEt4SzXPnBXR1pVuOKXaX8FZK60Zu7knu2U8tZ/sEekqa1rK');
